@@ -97,6 +97,9 @@ $(".start").click(function() {
     $(".previous").text("");
     $(".current").removeClass("Club Spade Diamond Heart");
     $(".current").text("");
+    $(".lower").prop('disabled', false);
+    $(".same").prop('disabled', false);
+    $(".higher").prop('disabled', false);
     new Deck();
     new shuffle();
     currentCard.push(deal());
