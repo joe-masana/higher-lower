@@ -101,8 +101,6 @@ $(".start").click(function() {
     new shuffle();
     currentCard.push(deal());
     updateCurrentCard();
-    console.log(cards);
-    console.log(currentCard);
 });
 
 $(".lower").click(function() {
