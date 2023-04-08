@@ -11,18 +11,36 @@
     <body>
 
         <div class="title">
-            <h1>Higher or Lower</h1>
-            <h2>Card Game</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="images/Heart.png" alt="club suit" class="heart">
+                    </div>
+                    <div class="col-md-4 name">
+                        <h1>Higher or Lower</h1>
+                        <h2>Card Game</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images/Spade.png" alt="club spade" class="spade">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="instructions">
             <p>The deck starts with 52 cards. Aces have a value of 1.</p>
             <p>Guess if the next card will be of a higher, lower, or equal value as the current card.</p>
             <p>Score one point for each correct guess.</p>
+        </div>
+
+        <div class="blurb">
             <h3>Will you play the odds or beat the odds?</h3>
         </div>
         
         <div class="game">
+            <div class="container">
+                <button class="btn btn-primary btn-lg start">Start</button>
+            </div>
             <div class="container cards">
                 <div class="row">
                     <div class="col-lg-4">
@@ -30,8 +48,10 @@
                         <p>Previous card</p>
                         <button class="card previous" tabindex="-1"></button>
                     </div>
-                    <div class="col-lg-4">
-                        <button class="btn btn-primary start">Start</button>
+                    <div class="col-lg-4 buttons">                        
+                        <button class="btn btn-success btn-lg lower">Lower</button>
+                        <button class="btn btn-success btn-lg same">Same</button>
+                        <button class="btn btn-success btn-lg higher">Higher</button>
                         <h3 class="hidden final"></h3>
                     </div>
                     <div class="col-lg-4">
@@ -40,19 +60,6 @@
                         <button class="card current" tabindex="-1"></button>
                     </div>    
                 </div>    
-            </div>
-            <div class="container buttons">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <button class="btn btn-success btn-lg lower">Lower</button>
-                    </div>
-                    <div class="col-lg-4">
-                        <button class="btn btn-success btn-lg same">Same</button>
-                    </div>
-                    <div class="col-lg-4">
-                        <button class="btn btn-success btn-lg higher">Higher</button>
-                    </div>
-                </div>
             </div>
         </div>
 

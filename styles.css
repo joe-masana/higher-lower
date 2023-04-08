@@ -2,9 +2,56 @@ body {
     text-align: center;
 }
 
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.title {
+    margin: 0;
+    padding: 2.6% 0;
+}
+
+.name {
+    border: 1rem solid;
+    padding: 100px 0;
+}
+
+.heart {
+    transform: rotate(-45deg);
+}
+
+.spade {
+    transform: rotate(45deg);
+}
+
+.instructions {
+    background-color: black;
+    color: white;
+    font-family: serif;
+    padding: 3% 0;
+}
+
+.blurb {
+    background-color: red;
+    color: white;
+    padding: 20px 0;
+}
+
+.game {
+    margin: 20px 0 40px;
+}
+
+.start {
+    margin-bottom: 20px;
+}
+
+.btn-success {
+    margin: 150px 10px 20px;
+}
+
 .card {
     color: white;
-    font-size: 3rem;
+    font-size: 5rem;
     height: 300px;
     pointer-events: none;
     text-align: center;
@@ -14,6 +61,17 @@ body {
 
 .final {
     color: red;
+}
+
+.play {
+    padding: 4%;
+}
+
+.footer {
+    background-color: red;
+    color: white;
+    font-size: 2rem;
+    padding: 2% 0;
 }
 
 .Club {
