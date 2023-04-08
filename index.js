@@ -2,12 +2,18 @@ let lastCard = [];
 let currentCard = [];
 let cards = [];
 let score = 0;
+const shuffleSound = new Audio("sounds/Shuffle.mp3");
+const cardFlip = new Audio("sounds/CardFlip.mp3");
 suit = ["Heart", "Diamond", "Spade", "Club"];
+$(".lower").prop('disabled', true);
+$(".same").prop('disabled', true);
+$(".higher").prop('disabled', true);
+
 
 //basic functions
 function Deck() {
   for (i = 0; i < suit.length; i++) {
-    for (rank = 13; rank > 0; rank--) {
+    for (rank = 14; rank > 1; rank--) {
       cards.push({
         suit: suit[i],
         rank: rank
@@ -33,7 +39,7 @@ const deal = function() {
 function updateCurrentCard() {
   $(".remaining").text("Remaining Cards: " + cards.length)
   $(".current").addClass(currentCard[0].suit);
-  if (currentCard[0].rank == "1") {
+  if (currentCard[0].rank == "14") {
     $(".current").text("A");
   } else if (currentCard[0].rank == "11") {
     $(".current").text("J");
@@ -48,9 +54,10 @@ function updateCurrentCard() {
 
 function onPress() {
   lastCard = currentCard;
+  cardFlip.play();
   $(".previous").removeClass("Club Spade Diamond Heart");
   $(".previous").addClass(currentCard[0].suit);
-  if (currentCard[0].rank == "1") {
+  if (currentCard[0].rank == "14") {
     $(".previous").text("A");
   } else if (currentCard[0].rank == "11") {
     $(".previous").text("J");
@@ -102,8 +109,11 @@ $(".start").click(function() {
     $(".lower").prop('disabled', false);
     $(".same").prop('disabled', false);
     $(".higher").prop('disabled', false);
+    $(".start").text("Restart");
     new Deck();
     new shuffle();
+    shuffleSound.play();
+    console.log(cards);
     currentCard.push(deal());
     updateCurrentCard();
 });

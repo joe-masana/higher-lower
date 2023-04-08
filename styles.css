@@ -2,8 +2,20 @@ body {
     text-align: center;
 }
 
-h1, h2, h3, p {
+h1, h2, h3 {
+    font-family: "Open Sans", sans-serif;
     margin: 0;
+}
+
+p {
+    font-family: "Old Standard TT", serif;
+    margin: 0;
+}
+
+.header {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 3px;
 }
 
 .title {
@@ -13,7 +25,7 @@ h1, h2, h3, p {
 
 .name {
     border: 1rem solid;
-    padding: 100px 0;
+    padding: 65px 0;
 }
 
 .heart {
@@ -21,13 +33,16 @@ h1, h2, h3, p {
 }
 
 .spade {
+    position: relative;
     transform: rotate(45deg);
+    z-index: -1;
 }
 
 .instructions {
     background-color: black;
     color: white;
-    font-family: serif;
+    font-size: 2rem;
+    font-weight: 700;
     padding: 3% 0;
 }
 
@@ -68,7 +83,7 @@ h1, h2, h3, p {
 }
 
 .footer {
-    background-color: red;
+    background-color: black;
     color: white;
     font-size: 2rem;
     padding: 2% 0;
