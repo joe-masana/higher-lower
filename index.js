@@ -79,8 +79,8 @@ function scoring() {
 
 function endGame() {
   if (cards.length == 0) {
-    $(".hidden").text("Your final score is: " + score + ". Press start to play again!");
-    $(".hidden").removeClass("hidden");
+    $(".final").text("Your final score is: " + score + ". Press start to play again!");
+    $(".final").removeClass("hidden");
     $(".lower").prop('disabled', true);
     $(".same").prop('disabled', true);
     $(".higher").prop('disabled', true);
@@ -92,6 +92,8 @@ $(".start").click(function() {
     cards = [];
     currentCard =[]; 
     score = 0;
+    $(".final").text("Your final score is: " + score + ". Press start to play again!");
+    $(".final").addClass("hidden");
     $(".score").text("Current Score: " + score);
     $(".previous").removeClass("Club Spade Diamond Heart");
     $(".previous").text("");
