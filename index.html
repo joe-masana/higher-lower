@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Higher or Lower</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <div class="title">
+            <h1>Higher or Lower</h1>
+            <h2>Card Game</h2>
+        </div>
+
+        <div class="instructions">
+            <p>The deck starts with 52 cards. Aces have a value of 1.</p>
+            <p>Guess if the next card will be of a higher, lower, or equal value as the current card.</p>
+            <p>Score one point for each correct guess.</p>
+            <h3>Will you play the odds or beat the odds?</h3>
+        </div>
+        
+        <div class="game">
+            <div class="container cards">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h1 class="score">Current Score: 0</h1>
+                        <p>Previous card</p>
+                        <button class="card previous" tabindex="-1"></button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-primary start">Start</button>
+                        <h3 class="hidden final"></h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <h1 class="remaining">Remaining Cards: 52</h1>
+                        <p>Current card</p>
+                        <button class="card current" tabindex="-1"></button>
+                    </div>    
+                </div>    
+            </div>
+            <div class="container buttons">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <button class="btn btn-success btn-lg lower">Lower</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-success btn-lg same">Same</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-success btn-lg higher">Higher</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>designed by Joe Masana, Jr.</p>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="index.js" charset="utf-8"></script>
+    </body>
+
+</html>
