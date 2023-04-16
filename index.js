@@ -5,9 +5,7 @@ let score = 0;
 const shuffleSound = new Audio("sounds/Shuffle.mp3");
 const cardFlip = new Audio("sounds/CardFlip.mp3");
 suit = ["Heart", "Diamond", "Spade", "Club"];
-$(".lower").prop('disabled', true);
-$(".same").prop('disabled', true);
-$(".higher").prop('disabled', true);
+$(".btn-success").prop('disabled', true);
 
 
 //basic functions
@@ -52,10 +50,8 @@ function updateCurrentCard() {
   }
 }
 
-function onPress() {
-  lastCard = currentCard;
-  cardFlip.play();
-  $(".previous").removeClass("Club Spade Diamond Heart");
+function updatePreviousCard() {
+  $(".previous").removeClass(suit);
   $(".previous").addClass(currentCard[0].suit);
   if (currentCard[0].rank == "14") {
     $(".previous").text("A");
@@ -68,8 +64,14 @@ function onPress() {
   } else {
     $(".previous").text(currentCard[0].rank);
   }
+}
+
+function onPress() {
+  lastCard = currentCard;
+  cardFlip.play();
+  updatePreviousCard();
   currentCard = [];
-  $(".current").removeClass("Club Spade Diamond Heart");
+  $(".current").removeClass(suit);
   currentCard.push(deal());
   updateCurrentCard();
   scoring();
@@ -86,11 +88,9 @@ function scoring() {
 
 function endGame() {
   if (cards.length == 0) {
-    $(".final").text("Your final score is: " + score + ". Press start to play again!");
+    $(".final").text("Your final score is: " + score + ". Press restart to play again!");
     $(".final").removeClass("hidden");
-    $(".lower").prop('disabled', true);
-    $(".same").prop('disabled', true);
-    $(".higher").prop('disabled', true);
+    $(".btn-success").prop('disabled', true);
   }
 }
 
@@ -102,13 +102,9 @@ $(".start").click(function() {
     $(".final").text("Your final score is: " + score + ". Press start to play again!");
     $(".final").addClass("hidden");
     $(".score").text("Current Score: " + score);
-    $(".previous").removeClass("Club Spade Diamond Heart");
-    $(".previous").text("");
-    $(".current").removeClass("Club Spade Diamond Heart");
-    $(".current").text("");
-    $(".lower").prop('disabled', false);
-    $(".same").prop('disabled', false);
-    $(".higher").prop('disabled', false);
+    $(".card").removeClass(suit);
+    $(".card").text("");
+    $(".btn-success").prop('disabled', false);
     $(".start").text("Restart");
     new Deck();
     new shuffle();
@@ -132,4 +128,3 @@ $(".higher").click(function() {
   userInput = ">";
   onPress();
 });
-
